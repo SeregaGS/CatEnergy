@@ -1,0 +1,130 @@
+.utility {
+  margin-bottom: 49px;
+  padding-top: 25px;
+  @media (min-width: @size-tablet) {
+    margin-bottom: 0;
+    padding-bottom: 46px;
+    border-bottom: 1px solid @border-color;
+  }
+  @media (min-width: @size-desktop) {
+    border-bottom: none;
+    padding-bottom: 28px;
+  }
+  .container {
+    @media (min-width: (@size-tablet + 132)) {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: @size-desktop) {
+      max-width: @size-desktop;
+    }
+  }
+  &__title {
+    margin: 0 0 41px 0;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    @media (min-width: @size-tablet) {
+      font-size: 60px;
+      line-height: 60px;
+      margin-bottom: 33px;
+    }
+    @media (min-width: @size-desktop) {
+      margin-bottom: 34px;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    counter-reset: process;
+    @media (min-width: @size-tablet) {
+      grid-template-columns: repeat(2, 250px);
+      column-gap: 133px;
+      row-gap: 37px;
+    }
+    @media (min-width: @size-desktop) {
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 80px;
+      justify-content: space-between;
+    }
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    padding: 0 0 0 80px;
+    font-family: @font-family-basic;
+    font-size: 14px;
+    line-height: 18px;
+    color: @special-dark-color-1;
+    counter-increment: process;
+    @media (min-width: @size-tablet) {
+      width: 100%;
+      height: 280px;
+      padding: 110px 5px 15px 0;
+      overflow: hidden;
+      font-size: 16px;
+      line-height: 24px;
+      text-overflow: ellipsis;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      background-color: @basic-color-2;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 30px;
+      @media (min-width: @size-tablet) {
+        top: 40px;
+        width: 80px;
+        height: 80px;
+      }
+    }
+    &::after {
+      @media (min-width: @size-tablet) {
+        content: counter(process);
+        position: absolute;
+        top: 0;
+        right: 18px;
+        z-index: -1;
+        width: 118px;
+        color: @basic-color-3;
+        font-family: @font-familys;
+        font-size: 280px;
+        line-height: 1;
+        text-align: center;
+      }
+    }
+    &--leaf {
+      &::before {
+        background-image: url(../img/icons/icon_leaf.svg);
+      }
+    }
+    &--tub {
+      &::before {
+        background-image: url(../img/icons/icon_tub.svg);
+      }
+    }
+    &--eat {
+      &::before {
+        background-image: url(../img/icons/icon_eat.svg);
+        background-size: 25px;
+      }
+    }
+    &--clock {
+      &::before {
+        background-image: url(../img/icons/icon_alarm.svg);
+        background-size: 32px;
+      }
+    }
+  }
+}

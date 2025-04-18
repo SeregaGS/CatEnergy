@@ -1,0 +1,78 @@
+.contacts {
+  position: relative;
+  min-height: 400px;
+  &__info {
+    padding: 26px 0;
+    background-color: @body-color;
+    @media (min-width: @size-tablet) {
+      padding: 0;
+    }
+    @media (min-width: @size-desktop) {
+      position: relative;
+      z-index: 11;
+      top: 95px;
+      background-color: transparent;
+    }
+    &--container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+      @media (min-width: @size-tablet) {
+        grid-template-columns: 173px 163px;
+        padding: 57px 40px 61px;
+      }
+      @media (min-width: @size-desktop) {
+        width: 565px;
+        background-color: @body-color;
+        padding: 57px 72px 61px 80px;
+      }
+    }
+  }
+  &__title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: uppercase;
+    @media (min-width: @size-tablet) {
+      font-size: 20px;
+      line-height: 26px;
+      margin-top: 3px;
+    }
+  }
+  &__address {
+    display: flex;
+    flex-direction: column;
+    font-family: @font-family-basic;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: @special-dark-color-1;
+    @media (min-width: @size-tablet) {
+      font-size: 16px;
+      line-height: 20px;
+      text-align: right;
+      row-gap: 19px;
+    }
+    @media (min-width: @size-desktop) {
+      text-align: left;
+    }
+  }
+  &__map {
+    display: block;
+    width: 100%;
+    height: 362px;
+    object-fit: cover;
+    @media (min-width: @size-tablet) {
+      height: 400px;
+    }
+    @media (min-width: @size-desktop) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 10;
+    }
+  }
+}

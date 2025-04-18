@@ -1,0 +1,42 @@
+.page {
+  height: 100%;
+  &__body {
+    @media (min-width: @size-tablet) {
+      min-height: 100%;
+      display: grid;
+      grid-template-rows: min-content 1fr min-content;
+    }
+  }
+  &__header {
+    background-color: transparent;
+  }
+  &__main-promo {
+    position: relative;
+    min-height: 275px;
+    @media (min-width: @size-tablet) {
+      margin-bottom: 0px;
+    }
+  }
+  &__footer {
+    background-color: @basic-color-3;
+    &__logo-dev {
+      padding-top: 22px;
+      display: flex;
+      align-items: center;
+      @media (min-width: @size-tablet) {
+        padding-top: 0;
+      }
+    }
+  }
+  &__catalog,
+  &__form {
+    & .contacts {
+      &__info {
+        background-color: @basic-color-3;
+        @media (min-width: @size-desktop) {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

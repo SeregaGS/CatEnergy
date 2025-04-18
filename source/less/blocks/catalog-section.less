@@ -1,0 +1,183 @@
+.catalog-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  margin-top: -5px;
+  margin-bottom: 18px;
+  @media (min-width: @size-tablet) {
+    margin-bottom: 34px;
+  }
+  @media (min-width: @size-desktop) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+  }
+  &__index-item {
+    width: 100%;
+    padding: 23px 20px 20px 20px;
+    background-color: @basic-color-3;
+    @media (min-width: @size-tablet) {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 75px 52px 63px;
+      margin-bottom: 10px;
+    }
+    @media (min-width: @size-desktop) {
+      max-width: 570px;
+    }
+  }
+  &__index-title {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    margin: 3px 0 22px 2px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 42px;
+    text-transform: uppercase;
+    @media (min-width: @size-tablet) {
+      margin: 0 0 0 0;
+      font-size: 36px;
+      line-height: 36px;
+      letter-spacing: 0.3px;
+      // padding-left: 0;
+    }
+    @media (min-width: @size-desktop) {
+      padding-left: 162px;
+      margin-bottom: 74px;
+      letter-spacing: 0;
+    }
+    &::before {
+      content: "";
+      width: 50px;
+      height: 50px;
+      margin-top: -3px;
+      background-color: @basic-color-2;
+      border-radius: 50%;
+      @media (min-width: @size-tablet) {
+        position: absolute;
+        top: 19px;
+        right: 10px;
+        width: 200px;
+        height: 200px;
+      }
+      @media (min-width: @size-desktop) {
+        width: 100px;
+        height: 100px;
+        left: 0;
+        top: -27px;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 67px;
+      height: 55px;
+      left: -9px;
+      top: -9px;
+      background-repeat: no-repeat;
+      background-position: center;
+      @media (min-width: @size-tablet) {
+        width: 268px;
+        height: 250px;
+        left: auto;
+        right: -28px;
+        top: -28px;
+      }
+      @media (min-width: @size-desktop) {
+        width: 140px;
+        height: 110px;
+        right: auto;
+        left: -19px;
+        top: -35px;
+      }
+    }
+    &--slim {
+      &::after {
+        background-image: url("../img/icons/cat-slim.svg");
+        @media (min-width: @size-tablet) {
+          background-size: 140px;
+          background-position: 60px 33px;
+        }
+        @media (min-width: @size-desktop) {
+          background-size: 70px;
+          background-position: 34px 0px;
+        }
+      }
+    }
+    &--pro {
+      &::after {
+        background-image: url("../img/icons/cat-pro.svg");
+        @media (min-width: @size-tablet) {
+          background-size: 268px;
+          right: -24px;
+          top: -10px;
+        }
+        @media (min-width: @size-desktop) {
+          background-size: 134px;
+          background-position: 0 0;
+        }
+      }
+    }
+  }
+  &__index-text {
+    padding-bottom: 22px;
+    font-family: @font-family-basic;
+    font-size: 14px;
+    line-height: 18px;
+    color: @special-dark-color-1;
+    border-bottom: 1px solid @border-color;
+    @media (min-width: @size-tablet) {
+      max-width: 340px;
+      padding-bottom: 0;
+      margin-top: 25px;
+      margin-bottom: 55px;
+      font-size: 16px;
+      line-height: 24px;
+      color: @color-text;
+      border-bottom: none;
+    }
+    @media (min-width: @size-desktop) {
+      max-width: 100%;
+      margin-bottom: 29px;
+    }
+  }
+  &__index-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 0 3px 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: -0.2px;
+    color: @color-text;
+    @media (min-width: @size-tablet) {
+      font-size: 20px;
+      line-height: auto;
+      gap: 27px;
+    }
+    @media (min-width: @size-desktop) {
+      letter-spacing: 0;
+      gap: 27px;
+    }
+    &::after {
+      content: "";
+      width: 24px;
+      height: 12px;
+      background-image: url("../img/icons/icon_arrow.svg");
+      background-position: 100% 50%;
+      background-repeat: no-repeat;
+    }
+    &:hover,
+    &:active {
+      &::after {
+        width: 32px;
+      }
+    }
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}

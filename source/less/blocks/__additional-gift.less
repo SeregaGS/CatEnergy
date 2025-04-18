@@ -1,0 +1,80 @@
+.additional-gift {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 289px;
+  text-align: center;
+  background-color: rgba(@basic-color-1, 0.85);
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -5;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/promo/catbag.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    @media (min-width: @size-mobile) and (min-resolution: 2dppx) {
+      background-image: url("../img/promo/catbag@2x.jpg");
+      background-position: -34px -1px;
+    }
+    @media (min-width: @size-tablet) and (max-width: @size-desktop) {
+      background-image: url("../img/promo/catbag-tablet.jpg");
+      background-position: -34px -1px;
+    }
+    @media (min-width: @size-tablet) and (max-width: @size-desktop) and (min-resolution: 2dppx) {
+      background-image: url("../img/promo/catbag-tablet@2x.jpg");
+      background-position: -34px -1px;
+    }
+  }
+  @media (min-width: @size-tablet) {
+    height: 200px;
+    background-position: 50% 60%;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  @media (min-width: @size-desktop) {
+    align-items: end;
+    height: 100%;
+    background-position: 50% 50%;
+  }
+  &__text {
+    margin: 15% 20%;
+    font-family: @font-family-basic;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: @body-color;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 58px;
+      width: 78px;
+      height: 80px;
+      background-image: url("../img/icons/icon_gift.svg");
+      @media (min-width: @size-tablet) {
+        width: 80px;
+        height: 82px;
+        left: 119px;
+      }
+      @media (min-width: @size-desktop) {
+        left: 50%;
+      }
+    }
+    @media (min-width: @size-tablet) {
+      width: 165px;
+      margin: 3px 121px 0 0;
+      text-align: left;
+    }
+    @media (min-width: @size-desktop) {
+      margin: 17%;
+      text-align: center;
+    }
+  }
+}

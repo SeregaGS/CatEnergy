@@ -1,0 +1,105 @@
+.footer {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 39px 0 0;
+    @media (min-width: @size-tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 44px;
+      padding-bottom: 35px;
+    }
+  }
+  &__logo {
+    display: block;
+    text-align: center;
+    padding-bottom: 27px;
+    border-bottom: 1px solid @border-color;
+    @media (min-width: @size-tablet) {
+      margin-top: 7px;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    &--img {
+      width: 128px;
+      height: 24px;
+      &:hover {
+        opacity: 0.8;
+      }
+      &:active {
+        opacity: 0.6;
+      }
+    }
+    &-dev {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 0;
+      &:hover path {
+        fill: @basic-color-1;
+      }
+      &:active {
+        opacity: 0.5;
+      }
+      @media (min-width: @size-tablet) {
+        margin-right: 1px;
+        padding: 0;
+        gap: 25px;
+      }
+    }
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 19px;
+  max-width: 320px;
+  padding: 13px 0;
+  border-bottom: 1px solid @border-color;
+  @media (min-width: @size-tablet) {
+    border-bottom: none;
+    margin-right: -19px;
+  }
+  &__item {
+    width: 35px;
+    height: 35px;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: inherit;
+    color: @special-color-4;
+    &:hover {
+      color: @basic-color-1;
+      stroke: @basic-color-1;
+    }
+    &--vkontakte {
+      @media (min-width: @size-tablet) {
+        width: 33px;
+        height: 33px;
+        align-self: flex-start;
+      }
+    }
+    &--instagram {
+      @media (min-width: @size-tablet) {
+        width: 23px;
+        height: 23px;
+      }
+    }
+    &--facebook {
+      @media (min-width: @size-tablet) {
+        width: 28px;
+        height: 33px;
+      }
+    }
+  }
+}
+.logo-dev__img {
+  margin-left: auto;
+}

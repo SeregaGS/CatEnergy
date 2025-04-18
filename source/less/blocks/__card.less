@@ -1,0 +1,271 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-bottom: 49px;
+  @media (min-width: @size-tablet) {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+  @media (min-width: @size-desktop) {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 80px;
+    row-gap: 57px;
+  }
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 112px auto;
+    align-items: center;
+    gap: 13px;
+    padding: 20px 0 24px;
+    @media (min-width: @size-tablet) {
+      padding: 36px 38px 38px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr auto;
+      background: linear-gradient(
+        to bottom,
+        transparent 82px,
+        @basic-color-3 82px
+      );
+    }
+    @media (min-width: @size-desktop) {
+      padding-top: 0;
+      padding-bottom: 40px;
+      gap: 12px;
+      background: linear-gradient(to bottom, transparent 86px, #f2f2f2 86px);
+    }
+    &--more {
+      grid-template-rows: auto auto;
+      margin-top: 7px;
+      padding: 0;
+      text-align: center;
+      gap: 0;
+      @media (min-width: @size-tablet) {
+        grid-template-rows: auto auto 1fr;
+        margin: 0;
+        margin-top: 82px;
+        padding: 36px 38px 39px;
+        background: transparent;
+        border: 2px solid @basic-color-3;
+      }
+      @media (min-width: @size-desktop) {
+        padding: 51px 38px 41px;
+        margin-top: 86px;
+        height: 431px;
+      }
+    }
+  }
+  &__info {
+    width: 140px;
+    margin-top: -4px;
+    color: @special-dark-color-1;
+    @media (min-width: @size-tablet) {
+      grid-column: 1 / -1;
+      margin-top: 7px;
+      width: 100%;
+    }
+    @media (min-width: @size-desktop) {
+      margin-top: 20px;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    @media (min-width: @size-tablet) {
+      text-align: center;
+    }
+  }
+  &__title {
+    margin: 0 60px 18px 0;
+    font-family: @font-familys;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: @special-dark-color-2;
+    text-transform: uppercase;
+    @media (min-width: @size-tablet) {
+      margin: 0 50px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+    @media (min-width: @size-desktop) {
+      margin: 0 15px;
+      line-height: 21px;
+    }
+    &--more {
+      position: relative;
+      grid-column: 1 / -1;
+      margin: 0 20px 7px;
+      padding-top: 73px;
+      text-align: center;
+      @media (min-width: @size-tablet) {
+        padding: 123px 35px 0;
+        margin: 0 0 23px 0;
+      }
+      @media (min-width: @size-desktop) {
+        padding: 108px 0 0 0;
+        margin-bottom: 25px;
+      }
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: @special-color-3;
+      }
+      &::before {
+        width: 2px;
+        height: 30px;
+        @media (min-width: @size-tablet) {
+          height: 60px;
+        }
+        @media (min-width: @size-desktop) {
+          top: -3px;
+        }
+      }
+      &::after {
+        width: 30px;
+        height: 2px;
+        top: 33px;
+        @media (min-width: @size-tablet) {
+          width: 60px;
+          top: 48px;
+        }
+        @media (min-width: @size-desktop) {
+          top: 26px;
+        }
+      }
+    }
+  }
+  &-spec {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+    margin-top: -4px;
+    margin-bottom: 4px;
+    @media (min-width: @size-tablet) {
+      column-gap: 0;
+      row-gap: 9px;
+      margin-top: 21px;
+      margin-bottom: 21px;
+    }
+    @media (min-width: @size-desktop) {
+      margin-top: 24px;
+      margin-bottom: 23px;
+    }
+    &__descr,
+    &__text {
+      font-family: @font-family-basic;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      @media (min-width: @size-tablet) {
+        padding-bottom: 6px;
+        border-bottom: 1px solid @special-color-3;
+        font-size: 16px;
+        color: @special-dark-color-1;
+      }
+    }
+    &__descr {
+      grid-column: 1 / 2;
+      text-align: left;
+      @media (min-width: @size-desktop) {
+        margin-left: 3px;
+      }
+    }
+
+    &__text {
+      grid-column: 2 / -1;
+      margin: 0;
+      text-align: right;
+    }
+  }
+  &__item-text {
+    font-family: @font-family-basic;
+    font-size: 12px;
+    line-height: 16px;
+    grid-column: 1 / -1;
+    margin: 0 0 22px 0;
+    @media (min-width: @size-tablet) {
+      padding: 0 15px;
+      margin-bottom: 87px;
+      font-size: 16px;
+      line-height: 18px;
+    }
+    @media (min-width: @size-desktop) {
+      padding: 0;
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+  }
+  &__image {
+    grid-column: 1 / 2;
+    grid-row: 1 / -2;
+
+    text-align: center;
+    @media (min-width: @size-tablet) {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      // width: 168px;
+      // height: 200px;
+    }
+  }
+  &__img {
+    padding: 7px 0 4px 5px;
+    max-width: 100%;
+    &--middle {
+      width: 68px;
+      height: 86px;
+      @media (min-width: @size-tablet) {
+        width: 141px;
+        height: 100%;
+        margin-top: -15px;
+        margin-right: 8px;
+      }
+      @media (min-width: @size-desktop) {
+        margin: 20px 0 0 0;
+      }
+    }
+    &--big {
+      width: 82px;
+      height: 100px;
+      margin: 11px 0 0 7px;
+      @media (min-width: @size-tablet) {
+        width: 172px;
+        height: 100%;
+        margin-top: -34px;
+        margin-right: 12px;
+      }
+      @media (min-width: @size-desktop) {
+        margin: 0;
+      }
+    }
+  }
+  &__button {
+    grid-column: 1 / -1;
+    margin-top: auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+
+    @media (min-width: @size-tablet) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  &__button--more {
+    color: @special-dark-color-2;
+    background-color: @basic-color-3;
+    &:hover {
+      background-color: darken(@basic-color-3, 2%);
+    }
+    &:active {
+      color: rgba(@special-dark-color-2, 0.3);
+      background-color: darken(@basic-color-3, 2%);
+    }
+  }
+}

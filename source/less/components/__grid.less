@@ -1,0 +1,39 @@
+/* MIXINS */
+@columns: 4;
+.generate-column(@i: 1) when (@i =< @columns) {
+  .col-@{i} {
+    grid-column: span @i;
+    @media (min-width: @size-mobile) {
+      grid-column: span @columns;
+    }
+    @media (min-width: @size-tablet) {
+      &.col-md-@{i} {
+        grid-column: span @i;
+      }
+    }
+  }
+  .generate-column(@i + 1);
+}
+
+.container {
+  width: 100%;
+
+  padding: 0 @paddings-lr-mobile;
+  @media (min-width: @size-tablet) {
+    padding: 0 @paddings-lr-tablet;
+  }
+  @media (min-width: @size-desktop) {
+    width: @size-desktop - 60px;
+    padding: 0;
+    margin: @centr-margin;
+  }
+  @media (min-width: @size-desktop-lg) {
+    width: @size-desktop;
+    margin: @centr-margin;
+  }
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(@columns, 1fr);
+}
+.generate-column();
