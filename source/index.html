@@ -40,7 +40,6 @@
           <svg class="logo__img logo__mobile" width="34" height="38">
             <use xlink:href="./img/sprite.svg#icon-mobile"></use>
           </svg>
-
           <svg
             class="logo__img-name"
             width="101"
@@ -356,14 +355,36 @@
         </div>
         <picture>
           <source
+            type="image/webp"
+            media="(min-width: 1220px)"
+            srcset="img/map/location.webp 1x, img/map/location@2x.webp 2x"
+          />
+          <source
+            type="image/jpg"
             media="(min-width: 1220px)"
             srcset="img/map/location.jpg 1x, img/map/location@2x.jpg 2x"
           />
           <source
+            type="image/webp"
+            media="(min-width: 768px)"
+            srcset="
+              img/map/location-tablet.webp    1x,
+              img/map/location-tablet@2x.webp 2x
+            "
+          />
+          <source
+            type="image/jpg"
             media="(min-width: 768px)"
             srcset="
               img/map/location-tablet.jpg    1x,
               img/map/location-tablet@2x.jpg 2x
+            "
+          />
+          <source
+            type="image/webp"
+            srcset="
+              img/map/location-mobile.webp    1x,
+              img/map/location-mobile@2x.webp 2x
             "
           />
           <img

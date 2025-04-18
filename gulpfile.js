@@ -46,11 +46,11 @@ export const less = () => {
 export const images = () => {
 	return gulp.src(['source/img/**/*.{jpg,png}', '!source/img/favicon/**'], { encoding: false })
 		.pipe(imagemin([
-			mozjpeg({ quality: 80, progressive: true }),
+			mozjpeg({ quality: 95, progressive: true }),
 			optipng({ optimizationLevel: 5 }),
 		]))
 		.pipe(gulp.dest('build/img'))
-		.pipe(webp({ quality: 80 }))
+		.pipe(webp({ quality: 100 }))
 		.pipe(gulp.dest('build/img'))
 		.pipe(browserSyncCreate.stream())
 

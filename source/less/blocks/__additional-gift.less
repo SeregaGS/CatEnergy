@@ -12,36 +12,40 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -5;
+    z-index: -1;
     width: 100%;
     height: 100%;
     background-image: url("../img/promo/catbag.jpg");
+    background-image: image-set(
+      url("../img/promo/catbag.webp") 1x,
+      url("../img/promo/catbag@2x.webp") 2x,
+      url("../img/promo/catbag.jpg") 1x,
+      url("../img/promo/catbag@2x.jpg") 2x
+    );
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-    @media (min-width: @size-mobile) and (min-resolution: 2dppx) {
-      background-image: url("../img/promo/catbag@2x.jpg");
-      background-position: -34px -1px;
-    }
     @media (min-width: @size-tablet) and (max-width: @size-desktop) {
       background-image: url("../img/promo/catbag-tablet.jpg");
-      background-position: -34px -1px;
-    }
-    @media (min-width: @size-tablet) and (max-width: @size-desktop) and (min-resolution: 2dppx) {
-      background-image: url("../img/promo/catbag-tablet@2x.jpg");
-      background-position: -34px -1px;
+      background-image: image-set(
+        url("../img/promo/catbag-tablet.webp") 1x,
+        url("../img/promo/catbag-tablet@2x.webp") 2x,
+        url("../img/promo/catbag-tablet.jpg") 1x,
+        url("../img/promo/catbag-tablet@2x.jpg") 2x
+      );
+      background-position: 50% 60%;
     }
   }
   @media (min-width: @size-tablet) {
     height: 200px;
-    background-position: 50% 60%;
     align-items: center;
     justify-content: flex-end;
   }
   @media (min-width: @size-desktop) {
     align-items: end;
     height: 100%;
-    background-position: 50% 50%;
   }
+
   &__text {
     margin: 15% 20%;
     font-family: @font-family-basic;

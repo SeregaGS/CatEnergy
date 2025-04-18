@@ -47,12 +47,15 @@
     right: 0;
     bottom: 0;
     height: 302px;
-    background-image: url(../img/promo/index-mobile.jpg);
+    background-image: image-set(
+      url(../img/promo/index-mobile.webp) 1x,
+      url(../img/promo/index-mobile@2x.webp) 2x,
+      url(../img/promo/index-mobile.png) 1x,
+      url(../img/promo/index-mobile@2x.png) 2x
+    );
     background-size: cover;
     z-index: -4;
-    @media (min-width: @size-mobile) and (min-resolution: 2dppx) {
-      background-image: url(../img/promo/index-mobile@2x.png);
-    }
+
     @media (min-width: @size-tablet) {
       height: 0;
     }
@@ -63,12 +66,14 @@
       bottom: 0;
       top: -125px;
       height: inherit;
-      background-image: url(../img/promo/index-background-desktop.jpg);
+      background-image: image-set(
+        url(../img/promo/index-background-desktop.webp) 1x,
+        url(../img/promo/index-background-desktop@2x.webp) 2x,
+        url(../img/promo/index-background-desktop.png) 1x,
+        url(../img/promo/index-background-desktop@2x.png) 2x
+      );
       background-size: cover;
       z-index: -4;
-    }
-    @media (min-width: @size-desktop) and (min-resolution: 2dppx) {
-      background-image: url(../img/promo/index-background-desktop@2x.jpg);
     }
   }
 
